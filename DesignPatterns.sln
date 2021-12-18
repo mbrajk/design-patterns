@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehaviorPattern", "BehaviorPattern\BehaviorPattern.csproj", "{20E3757A-7DCE-48F8-968F-F473F74D47D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehaviorPattern.Tests", "BehaviorPattern.Tests\BehaviorPattern.Tests.csproj", "{1B85855E-9093-43C6-B203-50088D2CABCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20E3757A-7DCE-48F8-968F-F473F74D47D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E3757A-7DCE-48F8-968F-F473F74D47D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E3757A-7DCE-48F8-968F-F473F74D47D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E3757A-7DCE-48F8-968F-F473F74D47D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B85855E-9093-43C6-B203-50088D2CABCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B85855E-9093-43C6-B203-50088D2CABCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B85855E-9093-43C6-B203-50088D2CABCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B85855E-9093-43C6-B203-50088D2CABCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
