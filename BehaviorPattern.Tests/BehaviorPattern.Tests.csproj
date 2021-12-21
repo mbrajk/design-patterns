@@ -16,11 +16,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="2-DuckCompositionalBaseImplementation" />
-      <Folder Include="3-DuckBehaviorImplementation" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\BehaviorPattern\BehaviorPattern.csproj" />
     </ItemGroup>
 

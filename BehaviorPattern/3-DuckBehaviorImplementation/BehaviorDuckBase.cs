@@ -4,6 +4,20 @@ using BehaviorPattern._3_DuckBehaviorImplementation.Behaviors.Swim;
 
 namespace BehaviorPattern._3_DuckBehaviorImplementation;
 
+/*
+ * Finally we look at using behaviors to solve the issues in the previous two examples.
+ * In this way we have ducks who can be swapped at runtime so they no longer violate
+ * LSP. Secondly we can encapsulate common code into a single behavior class, making
+ * our code DRY. If we add a new interface in the future we only need to create distinct
+ * classes for the types of functionality required, e.g. if we add a ISleepBehavior we would
+ * add a couple of behavior classes that implement this interface like NoSleepBehavior and
+ * SleepBehavior. Consolidate all of the code in these two classes and assign them to 
+ * the ducks as needed. We wouldn't have to re-implement the logic for every single duck.
+ * 
+ * Furthermore, If we slightly modify the code to add a method that allows us to update 
+ * behaviors, we would even be able to change a duck's behavior at runtime. This was not possible
+ * in our previous solutions.
+ */
 public abstract class BehaviorDuckBase
 {
     private ISoundBehavior _soundBehavior;
@@ -35,71 +49,5 @@ public abstract class BehaviorDuckBase
     public string Quack()
     {
         return _soundBehavior.MakeSound();
-    }
-}
-
-// we should set up these behaviors via Dependency Injection but that's another topic
-public class MallardDuck : BehaviorDuckBase
-{
-    public MallardDuck()
-        : base(
-            new QuackBehavior(), 
-            new SwimBehavior(), 
-            new FlyBehavior())
-    {
-    }
-
-    public override string DescribeAppearance()
-    {
-        return "Mallard Duck";
-    }
-}
-
-public class DuckCall : BehaviorDuckBase
-{
-    // we should set up these behaviors via Dependency Injection but that's another topic
-    public DuckCall()
-        : base(
-            new QuackBehavior(), 
-            new NoSwimBehavior(), 
-            new NoFlyBehavior())
-    {
-    }
-
-    public override string DescribeAppearance()
-    {
-        return "Duck Call";
-    }
-}
-
-public class RubberDuck : BehaviorDuckBase
-{
-    public RubberDuck()
-        : base(
-            new SqueakBehavior(), 
-            new FloatBehavior(), 
-            new NoFlyBehavior())
-    {
-    }
-
-    public override string DescribeAppearance()
-    {
-        return "Rubber Duck";
-    }
-}
-
-public class DecoyDuck : BehaviorDuckBase
-{
-    public DecoyDuck()
-        : base(
-            new SilentBehavior(), 
-            new NoSwimBehavior(), 
-            new NoFlyBehavior())
-    {
-    }
-
-    public override string DescribeAppearance()
-    {
-        return "Decoy Duck";
     }
 }
