@@ -2,5 +2,5 @@
 
 public interface ISwimBehavior
 {
-    public abstract void Swim();
+    public abstract string Swim();
 }

@@ -2,5 +2,5 @@
 
 public interface IFlyBehavior
 {
-    public abstract void Fly();
+    public abstract string Fly();
 }

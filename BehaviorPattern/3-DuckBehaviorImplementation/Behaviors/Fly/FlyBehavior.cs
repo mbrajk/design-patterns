@@ -2,8 +2,8 @@
 
 public class FlyBehavior : IFlyBehavior
 {
-    public void Fly()
+    public string Fly()
     {
-        Console.WriteLine("Flying");
+        return "Flying";
     }
 }

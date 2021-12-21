@@ -2,8 +2,8 @@
 
 public class FloatBehavior : ISwimBehavior
 {
-    public void Swim()
+    public string Swim()
     {
-        Console.WriteLine("Floating");
+        return "Floating";
     }
 }

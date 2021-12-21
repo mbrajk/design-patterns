@@ -20,21 +20,21 @@ public abstract class BehaviorDuckBase
         _flyBehavior = flyBehavior;
     }
     
-    public abstract void DescribeAppearance();
+    public abstract string DescribeAppearance();
 
-    public void Fly()
+    public string Fly()
     {
-        _flyBehavior.Fly();
+        return _flyBehavior.Fly();
     }
 
-    public void Swim()
+    public string Swim()
     {
-        _swimBehavior.Swim();
+        return _swimBehavior.Swim();
     }
 
-    public void Quack()
+    public string Quack()
     {
-        _soundBehavior.MakeSound();
+        return _soundBehavior.MakeSound();
     }
 }
 
@@ -49,9 +49,9 @@ public class MallardDuck : BehaviorDuckBase
     {
     }
 
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Mallard Duck");
+        return "Mallard Duck";
     }
 }
 
@@ -66,9 +66,9 @@ public class DuckCall : BehaviorDuckBase
     {
     }
 
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Duck Call");
+        return "Duck Call";
     }
 }
 
@@ -82,9 +82,9 @@ public class RubberDuck : BehaviorDuckBase
     {
     }
 
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Rubber Duck");
+        return "Rubber Duck";
     }
 }
 
@@ -98,8 +98,8 @@ public class DecoyDuck : BehaviorDuckBase
     {
     }
 
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Decoy Duck");
+        return "Decoy Duck";
     }
 }

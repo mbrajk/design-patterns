@@ -2,14 +2,14 @@
 
 public interface IFlyable
 {
-    public void Fly();
+    public string Fly();
 }
 
 public abstract class Quackable
 {
-    public void Quack()
+    public string Quack()
     {
-        Console.WriteLine("Quacking");
+        return "Quacking";
     }
 }
 

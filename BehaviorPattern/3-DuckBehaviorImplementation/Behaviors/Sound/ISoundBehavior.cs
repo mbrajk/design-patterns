@@ -2,5 +2,5 @@
 
 public interface ISoundBehavior
 {
-    public abstract void MakeSound();
+    public abstract string MakeSound();
 }

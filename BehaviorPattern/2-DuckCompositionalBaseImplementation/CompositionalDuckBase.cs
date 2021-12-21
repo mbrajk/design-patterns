@@ -2,62 +2,62 @@
 
 public abstract class CompositionalDuckBase
 {
-    public abstract void DescribeAppearance();
+    public abstract string DescribeAppearance();
 }
 
 public class MallardDuck : CompositionalDuckBase, IFlyable, IQuackable, ISwimmable
 {
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Mallard Duck");
+        return "Mallard Duck";
     }
 
-    public void Fly()
+    public string Fly()
     {
-        Console.WriteLine("Flying");
+        return "Flying";
     }
 
-    public void Quack()
+    public string Quack()
     {
-        Console.WriteLine("Quacking");
+        return "Quacking";
     }
 
-    public void Swim()
+    public string Swim()
     {
-        Console.WriteLine("Swimming");
+        return "Swimming";
     }
 }
 
 public class RubberDuck : CompositionalDuckBase, IQuackable, ISwimmable
 {
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Rubber Duck");
+        return "Rubber Duck";
     }
 
     // actually IQuackable is not really appropriate here because rubber ducks squeak
-    public void Quack()
+    public string Quack()
     {
-        Console.WriteLine("Squeak");
+        return "Squeak";
     }
 
     // additionally ISwimmable is probably going to work slightly differently since a rubber duck can only float
-    public void Swim()
+    public string Swim()
     {
-        Console.WriteLine("Floating");
+        return "Floating";
     }
 }
 
 public class DuckCall : CompositionalDuckBase, IQuackable
 {
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Duck Call");
+        return "Duck Call";
     }
 
-    public void Quack()
+    public string Quack()
     {
-        Console.WriteLine("Quacking");
+        return "Quacking";
     }
 }
 

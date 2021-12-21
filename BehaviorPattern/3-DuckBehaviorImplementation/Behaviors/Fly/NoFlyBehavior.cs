@@ -2,8 +2,8 @@
 
 public class NoFlyBehavior : IFlyBehavior
 {
-    public void Fly()
+    public string Fly()
     {
-        return;
+        return "No Action";
     }
 }

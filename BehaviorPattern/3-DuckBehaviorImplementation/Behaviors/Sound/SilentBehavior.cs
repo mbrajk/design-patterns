@@ -2,8 +2,8 @@
 
 public class SilentBehavior : ISoundBehavior
 {
-    public void MakeSound()
+    public string MakeSound()
     {
-        return;
+        return "No Action";
     }
 }

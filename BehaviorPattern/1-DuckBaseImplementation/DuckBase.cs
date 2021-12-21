@@ -2,69 +2,73 @@
 
 public abstract class DuckBase
 {
-    public virtual void Fly()
+    public virtual string Fly()
     {
-        Console.WriteLine("Flying");
+        return "Flying";
     }
 
-    public virtual void Swim()
+    public virtual string Swim()
     {
-        Console.WriteLine("Swimming");
+        return "Swimming";
     }
 
-    public virtual void Quack()
+    public virtual string Quack()
     {
-        Console.WriteLine("Quacking");
+        return "Quacking";
     }
 
-    public abstract void DescribeAppearance();
+    public abstract string DescribeAppearance();
 }
 
 // this implementation works fine since a Mallard duck is essentially just like any other duck
 public class MallardDuck : DuckBase
 {
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Mallard");
+        return "Mallard";
     }
 }
 
-// this implementation breaks down as a rubber duck squeaks and cannot fly
+// this implementation breaks down as a rubber duck squeaks, cannot fly, and floats
 public class RubberDuck : DuckBase
 {
-    public override void Fly()
+    public override string Fly()
     {
-        return;
+        return "No Action";
     }
 
-    public override void Quack()
+    public override string Quack()
     {
-        Console.WriteLine("Squeak");
+        return "Squeak";
     }
 
-    public override void DescribeAppearance()
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Rubber Duck");
+        return "Rubber Duck";
+    }
+    
+    public override string Swim()
+    {
+        return "Floating";
     }
 }
 
 // this implementation breaks down as a DuckCall can only Quack
 public class DuckCall : DuckBase
 {
-    public override void Fly()
+    public override string Fly()
     {
-        return;
+        return "No Action";
     }
     
-    public override void Swim()
+    public override string Swim()
     {
-        return;
+        return "No Action";
     }
-    
-    
-    public override void DescribeAppearance()
+
+    public override string DescribeAppearance()
     {
-        Console.WriteLine("Duck Call");
+        return "Duck Call";
     }
 }
 

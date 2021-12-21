@@ -2,5 +2,5 @@
 
 public interface IQuackable
 {
-    public void Quack();
+    public string Quack();
 }

@@ -2,8 +2,8 @@
 
 public class QuackBehavior : ISoundBehavior
 {
-    public void MakeSound()
+    public string MakeSound()
     {
-        Console.WriteLine("Quacking");
+        return "Quacking";
     }
 }

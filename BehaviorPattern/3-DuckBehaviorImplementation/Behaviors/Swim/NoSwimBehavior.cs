@@ -2,8 +2,8 @@
 
 public class NoSwimBehavior : ISwimBehavior
 {
-    public void Swim()
+    public string Swim()
     {
-        return;
+        return "No Action";
     }
 }

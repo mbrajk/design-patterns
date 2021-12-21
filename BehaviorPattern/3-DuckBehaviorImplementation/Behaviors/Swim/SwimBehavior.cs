@@ -2,8 +2,8 @@
 
 public class SwimBehavior : ISwimBehavior
 {
-    public void Swim()
+    public string Swim()
     {
-        Console.WriteLine("Swimming");
+        return "Swimming";
     }
 }

@@ -2,8 +2,8 @@
 
 public class SqueakBehavior : ISoundBehavior
 {
-    public void MakeSound()
+    public string MakeSound()
     {
-        Console.WriteLine("Squeak");
+        return "Squeak";
     }
 }

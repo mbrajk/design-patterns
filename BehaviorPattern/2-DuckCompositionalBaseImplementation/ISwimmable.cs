@@ -2,5 +2,5 @@
 
 public interface ISwimmable
 {
-    public void Swim();
+    public string Swim();
 }
