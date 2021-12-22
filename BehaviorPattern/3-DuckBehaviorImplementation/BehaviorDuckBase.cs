@@ -14,8 +14,8 @@ namespace BehaviorPattern._3_DuckBehaviorImplementation;
  * SleepBehavior. Consolidate all of the code in these two classes and assign them to 
  * the ducks as needed. We wouldn't have to re-implement the logic for every single duck.
  * 
- * Furthermore, If we slightly modify the code to add a method that allows us to update 
- * behaviors, we would even be able to change a duck's behavior at runtime. This was not possible
+ * Furthermore, If we slightly modify the code to add methods that allow us to update 
+ * behaviors, we are able to change a duck's behavior at runtime. This was not possible
  * in our previous solutions.
  */
 public abstract class BehaviorDuckBase
@@ -49,5 +49,20 @@ public abstract class BehaviorDuckBase
     public string Quack()
     {
         return _soundBehavior.MakeSound();
+    }
+
+    public void SetFlyBehavior(IFlyBehavior flyBehavior)
+    {
+        _flyBehavior = flyBehavior;
+    }
+
+    public void SetSoundBehavior(ISoundBehavior soundBehavior)
+    {
+        _soundBehavior = soundBehavior;
+    }
+
+    public void SetSwimBehavior(ISwimBehavior swimBehavior)
+    {
+        _swimBehavior = swimBehavior;
     }
 }
