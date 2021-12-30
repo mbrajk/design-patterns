@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace StrategyPattern.Tests._2_DuckCompositionalBaseImplementation
 {
+    [TestClass]
     public class DuckCompositionalBaseImplementationTests
     {
         // We can no longer test RubberDuck.Fly() as it is not a method in our
@@ -59,7 +60,7 @@ namespace StrategyPattern.Tests._2_DuckCompositionalBaseImplementation
             //   .Be("No Action");
         }
 
-        // Methids that exist still work and are testable, obviously
+        // Methods that exist still work and are testable, obviously
         [TestMethod]
         public void DuckCall_CallQuack_ReturnsQuack()
         {
