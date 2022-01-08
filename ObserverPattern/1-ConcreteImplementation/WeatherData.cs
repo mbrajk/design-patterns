@@ -34,7 +34,7 @@ public class WeatherData
         var humidity = GetHumidity();
         var pressure = GetPressure();
         
-        // At least he displays all implement a common interface
+        // At least the displays all implement a common interface
         _currentConditionsDisplay.Update(temperature, humidity, pressure);
         _forecastDisplay.Update(temperature, humidity, pressure);
         _statisticsDisplay.Update(temperature, humidity, pressure);
