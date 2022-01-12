@@ -2,5 +2,5 @@
 
 public interface IDisplay
 {
-    public void Update(float temperature, int humidity, int pressure);
+    public void Update(int temperature, int humidity, int pressure);
 }
