@@ -1,6 +1,6 @@
-﻿using ObserverPattern._2_ObserverImplementation.Observers;
+﻿using ObserverPattern._2_ObserverImplementationPush.Observers;
 
-namespace ObserverPattern._2_ObserverImplementation.Subjects;
+namespace ObserverPattern._2_ObserverImplementationPush.Subjects;
 
 public interface IWeatherDataSubject
 {

@@ -1,6 +1,6 @@
-﻿using ObserverPattern._2_ObserverImplementation.Subjects;
+﻿using ObserverPattern._2_ObserverImplementationPush.Subjects;
 
-namespace ObserverPattern._2_ObserverImplementation.Observers;
+namespace ObserverPattern._2_ObserverImplementationPush.Observers;
 
 /*
  * Displays now implement a base class, this moves some of the logic like registration and

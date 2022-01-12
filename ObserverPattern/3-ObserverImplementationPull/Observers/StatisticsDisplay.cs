@@ -1,6 +1,6 @@
-﻿using ObserverPattern._2_ObserverImplementationPush.Subjects;
+﻿using ObserverPattern._3_ObserverImplementationPull.Subjects;
 
-namespace ObserverPattern._2_ObserverImplementationPush.Observers;
+namespace ObserverPattern._3_ObserverImplementationPull.Observers;
 
 /*
  * Displays now implement a base class, this moves some of the logic like registration and
@@ -14,17 +14,20 @@ namespace ObserverPattern._2_ObserverImplementationPush.Observers;
 public class StatisticsDisplay : DisplayBase
 {
     private (int temperature, int humidity, int pressure) _data = (0, 0, 0);
+    private readonly IWeatherDataSubject _weatherDataSubject;
 
     public StatisticsDisplay(IWeatherDataSubject weatherDataSubject)
         : base(weatherDataSubject)
     {
+        _weatherDataSubject = weatherDataSubject;
     }
 
-    public override void Update(int temperature, int pressure, int humidity)
+    //TODO there is an update and now we need to get the data.. 
+    public override void Update()
     {
-        _data.pressure = pressure;
-        _data.humidity = humidity;
-        _data.temperature = temperature;
+        _data.pressure = _weatherDataSubject.GetPressure();
+        _data.humidity = _weatherDataSubject.GetHumidity();
+        _data.temperature = _weatherDataSubject.GetTemperature();
 
         //we can update the display whenever Update is called by calling Display() here
         //there are other and better ways to update the display but we are using this for a 
