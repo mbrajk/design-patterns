@@ -1,6 +1,6 @@
-﻿using ObserverPattern._2_ObserverImplementationPush.Subjects;
+﻿using ObserverPattern._3_ObserverImplementationPull.Subjects;
 
-namespace ObserverPattern._2_ObserverImplementationPush.Observers
+namespace ObserverPattern._3_ObserverImplementationPull.Observers
 {
     /*
      * We change the displays to be added to the IWeatherDataSubject individually. 
@@ -24,7 +24,7 @@ namespace ObserverPattern._2_ObserverImplementationPush.Observers
 
         public abstract string Display();
 
-        public abstract void Update(int temperature, int pressure, int humidity);
+        public abstract void Update();
 
         // Since we are responsible for registering ourselves with the Subject, we can also
         // manage un-registration

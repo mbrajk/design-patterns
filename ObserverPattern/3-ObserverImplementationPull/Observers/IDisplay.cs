@@ -1,4 +1,4 @@
-﻿namespace ObserverPattern._2_ObserverImplementationPush.Observers;
+﻿namespace ObserverPattern._3_ObserverImplementationPull.Observers;
 
 /*
  * We separate out the IDisplay interface and the IObserver interface to componentize 

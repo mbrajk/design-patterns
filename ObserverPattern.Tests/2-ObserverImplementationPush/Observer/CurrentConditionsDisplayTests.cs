@@ -1,10 +1,10 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
-using ObserverPattern._2_ObserverImplementation.Observers;
-using ObserverPattern._2_ObserverImplementation.Subjects;
+using ObserverPattern._2_ObserverImplementationPush.Observers;
+using ObserverPattern._2_ObserverImplementationPush.Subjects;
 
-namespace ObserverPattern.Tests._2_ObserverImplementation.Observer;
+namespace ObserverPattern.Tests._2_ObserverImplementationPush.Observer;
 
 [TestClass]
 public class CurrentConditionsDisplayTests

@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ObserverPattern._2_ObserverImplementation.Observers;
-using ObserverPattern._2_ObserverImplementation.Subjects;
+using ObserverPattern._3_ObserverImplementationPull.Observers;
+using ObserverPattern._3_ObserverImplementationPull.Subjects;
 
-namespace ObserverPattern.Tests._2_ObserverImplementation
+namespace ObserverPattern.Tests._3_ObserverImplementationPull
 {
     /// <summary>
     ///     We are using this unit test to simulate a running system as we are not
