@@ -27,18 +27,19 @@ public class WeatherDataSubject : IWeatherDataSubject
         }
     }
     
-    private float GetPressure()
+    // Realistically these would obtain real data
+    private int GetPressure()
     {
-        return 1;
+        return new Random().Next(0, 2);
     }
 
-    private float GetHumidity()
+    private int GetHumidity()
     {
-        return 50;
+        return new Random().Next(0, 100);
     }
 
-    private float GetTemperature()
+    private int GetTemperature()
     {
-        return 22f;
+        return new Random().Next(0, 100);
     }
 }

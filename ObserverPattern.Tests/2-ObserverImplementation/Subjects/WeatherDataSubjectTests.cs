@@ -16,19 +16,43 @@ public class WeatherDataSubjectTests
     }
 
     [TestMethod]
-    public void NotifyDisplays_CallsUpdateOnEveryDisplay()
+    public void NotifyDisplays_CallsUpdateOnEveryRegisteredDisplay()
     {
         // Arrange
-        var display = Substitute.For<IObserver>();
-        
-        _sut.RegisterDisplay(display);
-        
+        var display1 = Substitute.For<IObserver>();
+        var display2 = Substitute.For<IObserver>();
+
+        _sut.RegisterDisplay(display1);
+        _sut.RegisterDisplay(display2);
+
         // Act
         _sut.NotifyDisplays();
-        
+
         // Assert
-        display
+        display1
             .Received(1)
-            .Update(Arg.Any<float>(), Arg.Any<float>(), Arg.Any<float>());
+            .Update(Arg.Any<int>(), Arg.Any<int>(), Arg.Any<int>());
+
+        display2
+            .Received(1)
+            .Update(Arg.Any<int>(), Arg.Any<int>(), Arg.Any<int>());
+    }
+
+    [TestMethod]
+    public void NotifyDisplays_DoesNotCallUpdateOnUnregisteredDisplay()
+    {
+        // Arrange
+        var display1 = Substitute.For<IObserver>();
+
+        _sut.RegisterDisplay(display1);
+        _sut.RemoveDisplay(display1);
+
+        // Act
+        _sut.NotifyDisplays();
+
+        // Assert
+        display1
+            .Received(0)
+            .Update(Arg.Any<int>(), Arg.Any<int>(), Arg.Any<int>());
     }
 }
