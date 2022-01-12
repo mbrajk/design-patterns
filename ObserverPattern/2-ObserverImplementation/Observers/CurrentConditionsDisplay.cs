@@ -2,9 +2,9 @@
 
 public class CurrentConditionsDisplay : IObserver, IDisplay
 {
-    private (float temperature, float humidity, float pressure) _data = (0, 0, 0);
+    private (int temperature, int humidity, int pressure) _data = (0, 0, 0);
 
-    public void Update(float temperature, float pressure, float humidity)
+    public void Update(int temperature, int pressure, int humidity)
     {
         _data.pressure = pressure;
         _data.humidity = humidity;

@@ -6,7 +6,7 @@ namespace ObserverPattern.Tests._1_ConcreteImplementation;
 [TestClass]
 public class ConcreteImplementationTests
 {
-    private WeatherData _sut;
+    private WeatherData? _sut;
     
     [TestMethod]
     public void UntestableClassExample()

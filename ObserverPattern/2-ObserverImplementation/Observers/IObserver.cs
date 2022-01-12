@@ -2,5 +2,5 @@
 
 public interface IObserver
 {
-    public void Update(float temperature, float pressure, float humidity);
+    public void Update(int temperature, int pressure, int humidity);
 }
