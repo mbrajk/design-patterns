@@ -2,8 +2,9 @@
 
 public class StatisticsDisplay : IDisplay
 {
-    public void Update(float temperature, int humidity, int pressure)
+    public void Update(int temperature, int humidity, int pressure)
     {
+        //we could print out the results to the display here
         return;
     }
 }

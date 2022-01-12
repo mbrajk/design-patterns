@@ -1,17 +1,21 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NSubstitute;
 using ObserverPattern._2_ObserverImplementation.Observers;
+using ObserverPattern._2_ObserverImplementation.Subjects;
 
 namespace ObserverPattern.Tests._2_ObserverImplementation.Observer;
 
 [TestClass]
 public class StatisticsDisplayTests
 {
+    private IWeatherDataSubject _weatherDataSubject;
     private StatisticsDisplay _sut;
 
     public StatisticsDisplayTests()
     {
-        _sut = new StatisticsDisplay();
+        _weatherDataSubject = Substitute.For<IWeatherDataSubject>();
+        _sut = new StatisticsDisplay(_weatherDataSubject);
     }
     
     [TestMethod]
@@ -26,7 +30,7 @@ public class StatisticsDisplayTests
         // Assert
         result
             .Should()
-            .Be("Temp: 5, Pressure: 6, Humidity: 7");
+            .Be("Statistical Temp: 5, Pressure: 6, Humidity: 7");
     }
     
     [TestMethod]
@@ -38,6 +42,6 @@ public class StatisticsDisplayTests
         // Assert
         result
             .Should()
-            .Be("Temp: 0, Pressure: 0, Humidity: 0");
+            .Be("Statistical Temp: 0, Pressure: 0, Humidity: 0");
     }
 }
