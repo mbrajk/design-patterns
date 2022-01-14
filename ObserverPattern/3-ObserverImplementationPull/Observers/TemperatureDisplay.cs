@@ -1,6 +1,6 @@
-﻿using ObserverPattern._2_ObserverImplementationPush.Subjects;
+﻿using ObserverPattern._3_ObserverImplementationPull.Subjects;
 
-namespace ObserverPattern._2_ObserverImplementationPush.Observers;
+namespace ObserverPattern._3_ObserverImplementationPull.Observers;
 
 /*
  * Displays now implement a base class, this moves some of the logic like registration and
@@ -11,20 +11,30 @@ namespace ObserverPattern._2_ObserverImplementationPush.Observers;
  * 
  * Further details can be found in the DisplayBase class
  */
-public class CurrentConditionsDisplay : DisplayBase
+public class TemperatureDisplay : DisplayBase
 {
     private (int temperature, int humidity, int pressure) _data = (0, 0, 0);
+    private readonly IWeatherDataSubject _weatherDataSubject;
 
-    public CurrentConditionsDisplay(IWeatherDataSubject weatherDataSubject) 
+    /*
+     * We could create a temperature display before but we would always recieve
+     * the pressure and humidity, regardless of the fact that we would never utilize
+     * that data.
+     */
+    public TemperatureDisplay(IWeatherDataSubject weatherDataSubject) 
         : base(weatherDataSubject)
     {
+        _weatherDataSubject = weatherDataSubject;
     }
 
-    public override void Update(int temperature, int pressure, int humidity)
+    /* On update we no longer recieve parameters. However we still know that an update occured.
+     * This allows us to retrieve the data we need and update our display manually. We are no
+     * longer required to recieve an ever increasing amount of data and if the WeatherDataSubject
+     * adds addtional functionality, our displays are not required to update until they want or need to.
+     */
+    public override void Update()
     {
-        _data.pressure = pressure;
-        _data.humidity = humidity;
-        _data.temperature = temperature;
+        _data.temperature = _weatherDataSubject.GetTemperature();
 
         //we can update the display whenever Update is called by calling Display() here
         //there are other and better ways to update the display but we are using this for a 

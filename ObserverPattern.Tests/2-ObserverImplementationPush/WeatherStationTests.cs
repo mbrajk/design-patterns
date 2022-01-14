@@ -24,10 +24,9 @@ namespace ObserverPattern.Tests._2_ObserverImplementationPush
             // when weather data changes 
             var weatherDataSubject = new WeatherDataSubject();
 
-            // we add 3 new displays that reference the weather data subject that they wish to register to
-            var currentConditionsDisplay = new CurrentConditionsDisplay(weatherDataSubject);
+            // we add the displays that reference the weather data subject that they wish to register to
             var forecastDisplay = new ForecastDisplay(weatherDataSubject);
-            var statisticsDisplay = new StatisticsDisplay(weatherDataSubject);
+            var temperatureDisplay = new TemperatureDisplay(weatherDataSubject);
 
             // Act
             // we notify the displays about the current weather
@@ -45,7 +44,7 @@ namespace ObserverPattern.Tests._2_ObserverImplementationPush
             // Assert
             // NOTE: There is no assert for this test since we are running real code. 
             // However you can check the standard output in the Unit Test when running the unit tests
-            // to verify that we did in fact print out 3 messages, one for each display that was created above.
+            // to verify that we did in fact print out 2 messages, one for each display that was created above.
         }
     }
 }
