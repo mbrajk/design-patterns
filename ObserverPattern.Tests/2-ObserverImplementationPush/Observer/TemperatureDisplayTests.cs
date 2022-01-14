@@ -7,15 +7,15 @@ using ObserverPattern._2_ObserverImplementationPush.Subjects;
 namespace ObserverPattern.Tests._2_ObserverImplementationPush.Observer;
 
 [TestClass]
-public class StatisticsDisplayTests
+public class TemperatureDisplayTests
 {
     private IWeatherDataSubject _weatherDataSubject;
-    private StatisticsDisplay _sut;
+    private TemperatureDisplay _sut;
 
-    public StatisticsDisplayTests()
+    public TemperatureDisplayTests()
     {
         _weatherDataSubject = Substitute.For<IWeatherDataSubject>();
-        _sut = new StatisticsDisplay(_weatherDataSubject);
+        _sut = new TemperatureDisplay(_weatherDataSubject);
     }
     
     [TestMethod]
@@ -30,7 +30,7 @@ public class StatisticsDisplayTests
         // Assert
         result
             .Should()
-            .Be("Statistical Temp: 5, Pressure: 6, Humidity: 7");
+            .Be("Temperature: 5");
     }
     
     [TestMethod]
@@ -42,6 +42,6 @@ public class StatisticsDisplayTests
         // Assert
         result
             .Should()
-            .Be("Statistical Temp: 0, Pressure: 0, Humidity: 0");
+            .Be("Temperature: 0");
     }
 }

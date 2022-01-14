@@ -2,12 +2,16 @@
 
 namespace ObserverPattern._3_ObserverImplementationPull.Subjects;
 
-// Our new implementation adds a lot of flexibility over the previous design.
-// We can add displays at runtime which you can see happening in the WeatherStattionTests
-// in the Tests project. We have removed one violation of the Open/Closed principle, though 
-// some inefficiencies still exist which you will find in the comments and in
-// example 3-ObserverImplementationPull.
-// Speaking of which, our classes are now testable unlike in the 1-ConcreteImplementation example.
+// Our final implementation moves the responsibility for data to the displays.
+// Our WeatherDataSubject doesn't sent data to the displays when there is new data, 
+// instead the displays are informed that there is new data and they must fetch that
+// data from us.
+//
+// This allows us flexibility in design of the WeatherDataSubject. If we add addtional data
+// that the WeatherDataSubject can obtain, we will not need to update the displays immediately. 
+// Instead, they are respoinsible for updating if and when they require the new data.
+//
+// We still maintain all the benefits of our implementation in 2-ObserverImplementationPull
 // 
 public class WeatherDataSubject : IWeatherDataSubject
 {
@@ -23,6 +27,8 @@ public class WeatherDataSubject : IWeatherDataSubject
         _displays.Remove(observer);
     }
 
+    // we are not sending parameters to the displays anymore. We simply inform them that there is new data
+    // the display becomes responsible for reaching back out to us for the updated data that they require.
     public void NotifyDisplays()
     {
         foreach (var display in _displays)

@@ -11,20 +11,23 @@ namespace ObserverPattern._2_ObserverImplementationPush.Observers;
  * 
  * Further details can be found in the DisplayBase class
  */
-public class StatisticsDisplay : DisplayBase
+public class TemperatureDisplay : DisplayBase
 {
-    private (int temperature, int humidity, int pressure) _data = (0, 0, 0);
+    private int _temperature = 0;
 
-    public StatisticsDisplay(IWeatherDataSubject weatherDataSubject)
+    public TemperatureDisplay(IWeatherDataSubject weatherDataSubject)
         : base(weatherDataSubject)
     {
     }
 
+    /*
+     * Unfortunately we always recieve the pressure and humidity even though our display only
+     * cares about temperature. This problem would only get worse as the features of 
+     * WeatherDataSubject grow.
+     */
     public override void Update(int temperature, int pressure, int humidity)
     {
-        _data.pressure = pressure;
-        _data.humidity = humidity;
-        _data.temperature = temperature;
+        _temperature = temperature;
 
         //we can update the display whenever Update is called by calling Display() here
         //there are other and better ways to update the display but we are using this for a 
@@ -34,7 +37,7 @@ public class StatisticsDisplay : DisplayBase
 
     public override string Display()
     {
-        var output = $"Statistical Temp: {_data.temperature}, Pressure: {_data.pressure}, Humidity: {_data.humidity}";
+        var output = $"Temperature: {_temperature}";
 
         //This would update a display instead of simply writing to console but we use this example for simplicity
         Console.WriteLine(output);
