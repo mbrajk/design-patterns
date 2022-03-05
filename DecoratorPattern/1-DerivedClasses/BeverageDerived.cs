@@ -21,7 +21,7 @@
 
     public record DarkRoast : Beverage
     {
-        public override string Description => "A dark lovely, strong dark roast";
+        public override string Description => "A lovely, strong dark roast";
 
         // ReSharper disable once RedundantOverriddenMember
         public override decimal Cost()
@@ -33,7 +33,7 @@
 
     public record DarkRoastWithMilk : Beverage
     {
-        public override string Description => "A dark lovely, strong dark roast.. with milk";
+        public override string Description => "A lovely, strong dark roast.. with milk";
 
         public override decimal Cost()
         {
@@ -44,7 +44,7 @@
     
     public record DarkRoastWithSugar : Beverage
     {
-        public override string Description => "A dark lovely, strong dark roast.. with sugar";
+        public override string Description => "A lovely, strong dark roast.. with sugar";
 
         public override decimal Cost()
         {
@@ -55,7 +55,7 @@
     
     public record DarkRoastWithSugarAndMilk : Beverage
     {
-        public override string Description => "A dark lovely, strong dark roast.. with sugar and milk";
+        public override string Description => "A lovely, strong dark roast.. with sugar and milk";
 
         public override decimal Cost()
         {

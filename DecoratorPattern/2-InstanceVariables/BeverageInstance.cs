@@ -7,7 +7,7 @@ namespace DecoratorPattern._2_InstanceVariables;
  * into more manageable top-level only classes (e.g. DarkRoast, LightRoast). Then the
  * base class handles the rest.
  */
-public abstract record BeverageInstance(
+public abstract record Beverage(
     bool hasMilk,
     bool hasSoy,
     bool hasMocha,
@@ -15,7 +15,13 @@ public abstract record BeverageInstance(
 {
     public abstract string GetDescription { get; }
 
-    public decimal GetCost()
+    /* The nice feature that this solution gives us is that we only need to modify the base class
+     * if we want to change prices of ingredients.
+     *
+     * The downside is adding an ingredient requires a change to every single inherited class to handle
+     * the new ingredient(s)
+     */
+    public virtual decimal GetCost()
     {
         var cost = 0.00m;
         if (hasMilk)
@@ -41,3 +47,50 @@ public abstract record BeverageInstance(
         return cost;
     }
 }
+
+/*
+ * There are, of course, other ways that we can manage the ingredients instead of just using
+ * a constructor but it doesn't change the design too much if we do.
+ * The amount of ingredients may grow to become unwieldy eventually either way.
+ */
+record DarkRoastBeverage(
+    bool hasMilk,
+    bool hasSoy,
+    bool hasMocha,
+    bool hasSugar)
+    : Beverage(hasMilk, hasSoy, hasMocha, hasSugar)
+{
+    public override string GetDescription => "A lovely, strong dark roast";
+
+    public override decimal GetCost()
+    {
+        var costOfThisBeverage = 4.00m;
+        return base.GetCost() + costOfThisBeverage;
+    }
+}
+
+record LightRoastBeverage(
+        bool hasMilk,
+        bool hasSoy,
+        bool hasMocha,
+        bool hasSugar)
+    : Beverage(hasMilk, hasSoy, hasMocha, hasSugar)
+{
+    public override string GetDescription => "A lovely, not strong light roast";
+    
+    public override decimal GetCost()
+    {
+        var costOfThisBeverage = 4.00m;
+        return base.GetCost() + costOfThisBeverage;
+    }
+}
+
+/*
+ * As you can see this has definitely improved upon the previous derived class solution.
+ * There are still some problems with this solution. For example ingredients are not extensible.
+ * If I want double milk there is no way to handle that. There is also still the previous issue of
+ * every class needing to change if the available ingredients change. Additionally if we add
+ * another beverage that doesn't use these specific ingredients we will have a lot of unrelated
+ * ingredients to ignore. Granted we can use another base beverage class for that but that is
+ * bringing us into a similar issue like we had in the 1-DerivedClasses example. 
+ */
