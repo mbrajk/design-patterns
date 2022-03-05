@@ -8,6 +8,10 @@ namespace DecoratorPattern.Tests
         [TestMethod]
         public void TestMethod1()
         {
+
+               
         }
     }
 }
+
+

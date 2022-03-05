@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="1-DerivedClasses\" />
+  </ItemGroup>
+
 </Project>
