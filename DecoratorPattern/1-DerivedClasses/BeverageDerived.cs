@@ -1,4 +1,4 @@
-﻿namespace DecoratorPattern
+﻿namespace DecoratorPattern._1_DerivedClasses
 {
     /*
      * The following examples are showing the complexity that would be required
