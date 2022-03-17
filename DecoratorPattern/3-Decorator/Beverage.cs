@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 namespace DecoratorPattern._3_Decorator;
 
 public abstract record Beverage
@@ -10,9 +12,14 @@ public abstract record Beverage
         return Cost;
     }
 
-    public virtual string GetDescription()
+    public virtual ICollection<string> GetDescription()
     {
-        return IngredientDescription;
+        var ingredients = new Collection<string>
+        {
+            IngredientDescription
+        };
+        
+        return ingredients;
     }
 }
 

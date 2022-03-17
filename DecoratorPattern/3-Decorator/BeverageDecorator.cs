@@ -4,9 +4,11 @@ public abstract record BeverageDecorator(Beverage Beverage) : Beverage
 {
     protected readonly Beverage Beverage = Beverage;
     
-    public override string GetDescription()
+    public override ICollection<string> GetDescription()
     {
-        return $"{IngredientDescription}{Environment.NewLine}{Beverage.GetDescription()}";
+        var ingredients = Beverage.GetDescription();
+        ingredients.Add(IngredientDescription);
+        return ingredients;
     }
 
     public override decimal GetCost()
@@ -15,8 +17,7 @@ public abstract record BeverageDecorator(Beverage Beverage) : Beverage
     }
 }
 
-public record Whip(Beverage Beverage) 
-    : BeverageDecorator(Beverage)
+public record Whip(Beverage Beverage) : BeverageDecorator(Beverage)
 {
     protected override decimal Cost => 1.25m;
 

@@ -1,9 +1,17 @@
+using System.Collections.Generic;
 using DecoratorPattern._3_Decorator;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DecoratorPattern.Tests._3_Decorator;
-
+/*
+ * We can see from these tests that the calculation is simply calling cost on our final object in the chain
+ * You may notice that this design, although modifiable at runtime is still not idea. Imagine that we
+ * wanted to remove an item from an order, this would require a complex system that lets us step back
+ * through the items and re-create the beverage or start entirely from scratch. We will look at ways
+ * to solve this problem in the future but at least we have the foundation of the decorator pattern
+ * in mind.
+ */
 [TestClass]
 public class BeverageTests
 {
@@ -59,7 +67,14 @@ public class BeverageTests
         // Assert
         description
             .Should()
-            .Be("Mocha\r\nWhipped Cream\r\nWhipped Cream\r\nMocha\r\nDark Roast");
+            .BeEquivalentTo(new List<string>
+            {
+                "Mocha",
+                "Whipped Cream",
+                "Whipped Cream",
+                "Mocha",
+                "Dark Roast"
+            });
     }
     
     [TestMethod]
