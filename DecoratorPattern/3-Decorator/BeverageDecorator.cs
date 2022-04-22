@@ -3,7 +3,7 @@ namespace DecoratorPattern._3_Decorator;
 public abstract record BeverageDecorator(Beverage Beverage) : Beverage
 {
     protected readonly Beverage Beverage = Beverage;
-    
+
     public override ICollection<string> GetDescription()
     {
         var ingredients = Beverage.GetDescription();
@@ -24,8 +24,7 @@ public record Whip(Beverage Beverage) : BeverageDecorator(Beverage)
     protected override string IngredientDescription => "Whipped Cream";
 }
 
-public record Mocha(Beverage Beverage) 
-    : BeverageDecorator(Beverage)
+public record Mocha(Beverage Beverage) : BeverageDecorator(Beverage)
 {
     protected override string IngredientDescription => "Mocha";
 

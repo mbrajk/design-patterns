@@ -7,11 +7,7 @@ namespace DecoratorPattern._2_InstanceVariables;
  * into more manageable top-level only classes (e.g. DarkRoast, LightRoast). Then the
  * base class handles the rest.
  */
-public abstract record Beverage(
-    bool hasMilk,
-    bool hasSoy,
-    bool hasMocha,
-    bool hasSugar)
+public abstract record Beverage(bool hasMilk, bool hasSoy, bool hasMocha, bool hasSugar)
 {
     public abstract string GetDescription { get; }
 
@@ -33,12 +29,12 @@ public abstract record Beverage(
         {
             cost += 0.65m;
         }
-        
+
         if (hasSugar)
         {
             cost += 0.10m;
         }
-        
+
         if (hasSoy)
         {
             cost += 1.15m;
@@ -53,11 +49,7 @@ public abstract record Beverage(
  * a constructor but it doesn't change the design too much if we do.
  * The amount of ingredients may grow to become unwieldy eventually either way.
  */
-record DarkRoastBeverage(
-    bool hasMilk,
-    bool hasSoy,
-    bool hasMocha,
-    bool hasSugar)
+record DarkRoastBeverage(bool hasMilk, bool hasSoy, bool hasMocha, bool hasSugar)
     : Beverage(hasMilk, hasSoy, hasMocha, hasSugar)
 {
     public override string GetDescription => "A lovely, strong dark roast";
@@ -69,15 +61,11 @@ record DarkRoastBeverage(
     }
 }
 
-record LightRoastBeverage(
-        bool hasMilk,
-        bool hasSoy,
-        bool hasMocha,
-        bool hasSugar)
+record LightRoastBeverage(bool hasMilk, bool hasSoy, bool hasMocha, bool hasSugar)
     : Beverage(hasMilk, hasSoy, hasMocha, hasSugar)
 {
     public override string GetDescription => "A lovely, not strong light roast";
-    
+
     public override decimal GetCost()
     {
         var costOfThisBeverage = 4.00m;
@@ -92,5 +80,5 @@ record LightRoastBeverage(
  * every class needing to change if the available ingredients change. Additionally if we add
  * another beverage that doesn't use these specific ingredients we will have a lot of unrelated
  * ingredients to ignore. Granted we can use another base beverage class for that but that is
- * bringing us into a similar issue like we had in the 1-DerivedClasses example. 
+ * bringing us into a similar issue like we had in the 1-DerivedClasses example.
  */

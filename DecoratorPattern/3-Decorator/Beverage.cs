@@ -14,11 +14,8 @@ public abstract record Beverage
 
     public virtual ICollection<string> GetDescription()
     {
-        var ingredients = new Collection<string>
-        {
-            IngredientDescription
-        };
-        
+        var ingredients = new Collection<string> { IngredientDescription };
+
         return ingredients;
     }
 }
