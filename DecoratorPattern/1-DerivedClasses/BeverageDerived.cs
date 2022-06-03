@@ -14,8 +14,8 @@
 
         public virtual decimal Cost()
         {
-            return 3.00m; // base value. 
-            //Another option would be to make this abstract and let every class decide its own price
+            return 3.00m; // base value.
+            //Another option would be to make this abstract and let every class decide its own total price
         }
     }
 
@@ -27,7 +27,7 @@
         public override decimal Cost()
         {
             // redundant code as the dark roast is the same price but here for clarity
-            return base.Cost(); 
+            return base.Cost();
         }
     }
 
@@ -41,7 +41,7 @@
             return base.Cost() + milkCost;
         }
     }
-    
+
     public record DarkRoastWithSugar : Beverage
     {
         public override string Description => "A lovely, strong dark roast.. with sugar";
@@ -52,7 +52,7 @@
             return base.Cost() + sugarCost;
         }
     }
-    
+
     public record DarkRoastWithSugarAndMilk : Beverage
     {
         public override string Description => "A lovely, strong dark roast.. with sugar and milk";
@@ -64,7 +64,7 @@
             return base.Cost() + milkCost + sugarCost;
         }
     }
-    
+
     /*
      * I stopped here for brevity but imagine a light roast, a decaf coffee, etc were added.
      * We would need a different record for every milk sugar combination. Furthermore, we would
@@ -72,6 +72,6 @@
      * soy milk).
      *
      * Secondly if the milk price changes in this example we would need to modify the milk cost
-     * in every milk related class. We are safe in the base case but not in any other case. 
+     * in every milk related class. We are safe in the base case but not in any other case.
      */
 }

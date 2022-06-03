@@ -2,8 +2,6 @@ namespace DecoratorPattern._3_Decorator;
 
 public abstract record BeverageDecorator(Beverage Beverage) : Beverage
 {
-    protected readonly Beverage Beverage = Beverage;
-
     public override ICollection<string> GetDescription()
     {
         var ingredients = Beverage.GetDescription();

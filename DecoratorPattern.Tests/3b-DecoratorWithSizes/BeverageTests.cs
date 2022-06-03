@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using DecoratorPattern._3_Decorator;
+using DecoratorPattern._3b_DecoratorWithSizes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DecoratorPattern.Tests._3_Decorator;
+namespace DecoratorPattern.Tests._3_DecoratorWithSizes;
 
 /*
  * We can see from these tests that the calculation is simply calling cost on our final object in the chain
@@ -20,7 +20,7 @@ public class BeverageTests
     public void MochaWhipDarkRoastTest()
     {
         // Arrange
-        var baseBeverage = new DarkRoast();
+        var baseBeverage = new DarkRoast(BeverageSize.Large);
         var mocha = new Mocha(baseBeverage);
         var whip = new Whip(mocha);
 
@@ -35,7 +35,7 @@ public class BeverageTests
     public void MochaWhipWhipDarkRoastTest()
     {
         // Arrange
-        var baseBeverage = new DarkRoast();
+        var baseBeverage = new DarkRoast(BeverageSize.Large);
         var mocha = new Mocha(baseBeverage);
         var whip = new Whip(mocha);
         var whip2x = new Whip(whip);
@@ -44,14 +44,14 @@ public class BeverageTests
         var cost = whip2x.GetCost();
 
         // Assert
-        cost.Should().Be(6.00m);
+        cost.Should().Be(5.75m);
     }
 
     [TestMethod]
     public void MochaWhipWhipMochaDarkRoastDescriptionTest()
     {
         // Arrange
-        var baseBeverage = new DarkRoast();
+        var baseBeverage = new DarkRoast(BeverageSize.Small);
         var mocha = new Mocha(baseBeverage);
         var whip = new Whip(mocha);
         var whip2 = new Whip(whip);
@@ -79,21 +79,21 @@ public class BeverageTests
     public void MochaTest()
     {
         // Arrange
-        var baseBeverage = new DarkRoast();
+        var baseBeverage = new DarkRoast(BeverageSize.OhLawdHeComin);
         var mocha = new Mocha(baseBeverage);
 
         // Act
         var cost = mocha.GetCost();
 
         // Assert
-        cost.Should().Be(3.50m);
+        cost.Should().Be(40.40m);
     }
 
     [TestMethod]
     public void DarkRoastTest()
     {
         // Arrange
-        var baseBeverage = new DarkRoast();
+        var baseBeverage = new DarkRoast(BeverageSize.Large);
 
         // Act
         var cost = baseBeverage.GetCost();
