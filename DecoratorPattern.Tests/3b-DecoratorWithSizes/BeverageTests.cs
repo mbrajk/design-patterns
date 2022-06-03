@@ -79,7 +79,7 @@ public class BeverageTests
     public void MochaTest()
     {
         // Arrange
-        var baseBeverage = new DarkRoast(BeverageSize.OhLawdHeComin);
+        var baseBeverage = new DarkRoast(BeverageSize.OhLawdHeDrinkin);
         var mocha = new Mocha(baseBeverage);
 
         // Act

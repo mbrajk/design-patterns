@@ -7,7 +7,7 @@ public enum BeverageSize
     Small,
     Medium,
     Large,
-    OhLawdHeComin
+    OhLawdHeDrinkin
 }
 
 public abstract record Beverage(BeverageSize Size)
@@ -40,7 +40,7 @@ public record DarkRoast(BeverageSize Size = BeverageSize.Medium) : Beverage(Size
             BeverageSize.Small => 2.00m,
             BeverageSize.Medium => 2.25m,
             BeverageSize.Large => 2.50m,
-            BeverageSize.OhLawdHeComin => 35.20m,
+            BeverageSize.OhLawdHeDrinkin => 35.20m,
             _ => 2.25m
         };
 }
