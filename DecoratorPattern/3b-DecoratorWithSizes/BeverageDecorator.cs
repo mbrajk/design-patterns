@@ -23,7 +23,7 @@ public record Whip(Beverage Beverage) : BeverageDecorator(Beverage)
             BeverageSize.Small => 0.50m,
             BeverageSize.Medium => 0.75m,
             BeverageSize.Large => 1.00m,
-            BeverageSize.OhLawdHeComin => 5.20m,
+            BeverageSize.OhLawdHeDrinkin => 5.20m,
             _ => 0.75m
         };
 
@@ -40,7 +40,7 @@ public record Mocha(Beverage Beverage) : BeverageDecorator(Beverage)
             BeverageSize.Small => 0.50m,
             BeverageSize.Medium => 0.75m,
             BeverageSize.Large => 1.25m,
-            BeverageSize.OhLawdHeComin => 5.20m,
+            BeverageSize.OhLawdHeDrinkin => 5.20m,
             _ => 0.75m
         };
 }
