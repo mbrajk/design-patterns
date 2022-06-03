@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPattern", "Decorat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPattern.Tests", "DecoratorPattern.Tests\DecoratorPattern.Tests.csproj", "{027B7C37-45F2-496F-8D33-A3035C083756}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Experiments", "Experiments", "{3A1A6557-A7DC-4DBD-948B-055EF6F69370}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FactoryPattern", "FactoryPattern", "{1A76E423-DB44-40D6-B6CE-BA35E2B07E61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPattern", "FactoryPattern\FactoryPattern.csproj", "{FCC27C2C-BC3D-4C4A-84BC-2A9633B33538}"
