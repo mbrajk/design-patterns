@@ -16,16 +16,19 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{10E41FB6-B56C-4894-96DF-CDF1852B2FF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DecoratorPattern", "DecoratorPattern", "{1680DFE2-8213-4A1F-BA7E-C882BA0DD7D6}"
+	ProjectSection(SolutionItems) = preProject
+		DecoratorPattern\IBeverage.cs = DecoratorPattern\IBeverage.cs
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPattern", "DecoratorPattern\DecoratorPattern.csproj", "{9C4FC82B-E398-4D93-80D5-D74EF304FD24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoratorPattern", "DecoratorPattern\DecoratorPattern.csproj", "{9C4FC82B-E398-4D93-80D5-D74EF304FD24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPattern.Tests", "DecoratorPattern.Tests\DecoratorPattern.Tests.csproj", "{027B7C37-45F2-496F-8D33-A3035C083756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoratorPattern.Tests", "DecoratorPattern.Tests\DecoratorPattern.Tests.csproj", "{027B7C37-45F2-496F-8D33-A3035C083756}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FactoryPattern", "FactoryPattern", "{1A76E423-DB44-40D6-B6CE-BA35E2B07E61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPattern", "FactoryPattern\FactoryPattern.csproj", "{FCC27C2C-BC3D-4C4A-84BC-2A9633B33538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryPattern", "FactoryPattern\FactoryPattern.csproj", "{FCC27C2C-BC3D-4C4A-84BC-2A9633B33538}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPattern.Tests", "FactoryPattern.Tests\FactoryPattern.Tests.csproj", "{3AE5F209-5774-4780-8A53-BCA358710937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryPattern.Tests", "FactoryPattern.Tests\FactoryPattern.Tests.csproj", "{3AE5F209-5774-4780-8A53-BCA358710937}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
