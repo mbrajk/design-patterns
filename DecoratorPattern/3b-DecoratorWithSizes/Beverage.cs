@@ -17,10 +17,7 @@ public abstract record Beverage(BeverageSize Size)
     protected abstract decimal Cost { get; }
     protected abstract string IngredientDescription { get; }
 
-    public virtual decimal GetCost()
-    {
-        return Cost;
-    }
+    public virtual decimal GetCost() => Cost;
 
     public virtual ICollection<string> GetDescription()
     {
