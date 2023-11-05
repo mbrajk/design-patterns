@@ -61,6 +61,14 @@ public enum PizzaFactoryPizzaType
  * at runtime.  Ultimately we would want to have an interface for this class and set up the
  * implementation via dependency injection. However for the purposes of this example we will
  * keep it static.
+ *
+ * e.g. NewYorkPizzaFactory : IPizzaFactory
+ * Then PizzaOrderSystem could take a parameter of IPizzaFactory and we can manage the factory
+ * via Dependency Injection or we can new up the bespoke factory when we instantiate the order system.
+ *
+ * var pizzaFactory = new NewYorkPizzaFactory();
+ * var orderSystem = new PizzaOrderSystem(pizzaFactory);
+ * pizzaFactory.CreatePizza();
  */
 public static class PizzaFactory
 {
@@ -80,11 +88,12 @@ public static class PizzaFactory
 }
 
 
-/* There is no need for anything but the factory to know about these concrete pizza types
-* They are simply public for the purposes of unit testing. There are other ways we could
-* handle checking the type is correct in a unit test but it would complicate the implementations
-* and take away from the key point, which is showing the simple factory concept.
-*/
+/*
+ * There is no need for anything but the factory to know about these concrete pizza types
+ * They are simply public for the purposes of unit testing. There are other ways we could
+ * handle checking the type is correct in a unit test but it would complicate the implementations
+ * and take away from the key point, which is showing the simple factory concept.
+ */
 public record CheesePizza : PizzaFactoryPizza { }
 
 public record GreekPizza : PizzaFactoryPizza { }
