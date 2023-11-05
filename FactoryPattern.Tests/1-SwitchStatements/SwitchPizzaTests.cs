@@ -22,7 +22,7 @@ public class SwitchPizzaTests
     {
         // Arrange
         var pizzaType = SwitchPizzaType.Veggie;
-        var pizzaOrderSystem = new SwitchPizzaSystem();
+        var pizzaOrderSystem = new PizzaOrderSystem();
 
         // Act
         var pizza = pizzaOrderSystem.OrderPizza(pizzaType);

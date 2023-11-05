@@ -9,7 +9,7 @@
  * switch statement. Additionally custom pizzas would need their own
  * switch statement, meaning a custom pizza would require a code change. >:(
  */
-public class SwitchPizzaSystem
+public class PizzaOrderSystem
 {
     public SwitchPizza OrderPizza(SwitchPizzaType pizzaType)
     {
