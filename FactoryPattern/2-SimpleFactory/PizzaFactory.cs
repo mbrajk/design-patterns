@@ -56,6 +56,12 @@ public enum PizzaFactoryPizzaType
     Veggie
 }
 
+/*
+ * The pizza factory being static means that we cannot swap out factory implementations
+ * at runtime.  Ultimately we would want to have an interface for this class and set up the
+ * implementation via dependency injection. However for the purposes of this example we will
+ * keep it static.
+ */
 public static class PizzaFactory
 {
     public static PizzaFactoryPizza CreatePizza(PizzaFactoryPizzaType pizzaType)
@@ -73,6 +79,12 @@ public static class PizzaFactory
     }
 }
 
+
+/* There is no need for anything but the factory to know about these concrete pizza types
+* They are simply public for the purposes of unit testing. There are other ways we could
+* handle checking the type is correct in a unit test but it would complicate the implementations
+* and take away from the key point, which is showing the simple factory concept.
+*/
 public record CheesePizza : PizzaFactoryPizza { }
 
 public record GreekPizza : PizzaFactoryPizza { }
