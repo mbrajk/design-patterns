@@ -73,6 +73,8 @@ public record DarkRoastWithSugarAndMilk : Beverage
 
 The second iteration (`2-InstanceVariables`) introduces a single abstract beverage class where ingredient flags are tracked as instance variables. This significantly reduces the number of classes needed.
 
+> **Note**: Pricing differs between versions as each iteration represents a different implementation approach with recalibrated pricing logic.
+
 ### Implementation
 
 ```csharp
